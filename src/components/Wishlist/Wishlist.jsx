@@ -28,7 +28,7 @@ const Wishlist = () => {
 };
 
 Wishlist.propTypes = {
-    setCartItems: PropTypes.func.isRequired,
+    setCartItems: PropTypes.func,
 }
 
 export default Wishlist;

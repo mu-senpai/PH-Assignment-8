@@ -9,34 +9,35 @@ const Home = () => {
     const [categoryNames, setCategoryNames] = useState([]);
 
     useEffect(() => {
-        const fetchCategoriesFallback = async () => {
+        // const fetchCategoriesFallback = async () => {
             
-            const storedCategories = JSON.parse(localStorage.getItem('categories'));
+        //     const storedCategories = JSON.parse(localStorage.getItem('categories'));
             
-            if (storedCategories) {
-                setCategoryNames(storedCategories);
-            } else {
-                try {
-                    const response = await fetch('/categories.json');
-                    if (!response.ok) throw new Error("Network response was not ok");
-                    const data = await response.json();
-                    const fallbackCategories = data.categories.map(category => category.category_name);
-                    setCategoryNames(fallbackCategories);
+        //     if (storedCategories) {
+        //         setCategoryNames(storedCategories);
+        //     } else {
+        //         try {
+        //             const response = await fetch('/categories.json');
+        //             if (!response.ok) throw new Error("Network response was not ok");
+        //             const data = await response.json();
+        //             const fallbackCategories = data.categories.map(category => category.category_name);
+        //             setCategoryNames(fallbackCategories);
                     
-                    localStorage.setItem('categories', JSON.stringify(fallbackCategories));
-                } catch (error) {
-                    console.error("Error fetching fallback categories:", error);
-                }
-            }
-        };
+        //             localStorage.setItem('categories', JSON.stringify(fallbackCategories));
+        //         } catch (error) {
+        //             console.error("Error fetching fallback categories:", error);
+        //         }
+        //     }
+        // };
 
         if (categories.length > 0) {
             const categoryNamesFromLoader = categories.map(category => category.category_name);
             setCategoryNames(categoryNamesFromLoader);
             
-            localStorage.setItem('categories', JSON.stringify(categoryNamesFromLoader));
+            // localStorage.setItem('categories', JSON.stringify(categoryNamesFromLoader));
         } else {
-            fetchCategoriesFallback();
+            // fetchCategoriesFallback();
+            setCategoryNames([]);
         }
     }, [categories]);
 

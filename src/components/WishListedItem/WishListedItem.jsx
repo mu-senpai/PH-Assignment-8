@@ -28,6 +28,13 @@ const WishListedItem = ({product, setItems}) => {
         setItems(updatedList);
     }
 
+    const handleMoveToCart = id => {
+        const getList = JSON.parse(localStorage.getItem('wish-list'));
+        const updatedList = getList.filter(item => item.product_id !== id);
+        localStorage.setItem('wish-list', JSON.stringify(updatedList));
+        setItems(updatedList);
+    }
+
     const handleAddToCart = () => {
         if (JSON.parse(localStorage.getItem('cart-items'))) {
             const cartItems = JSON.parse(localStorage.getItem('cart-items'));   
@@ -45,8 +52,7 @@ const WishListedItem = ({product, setItems}) => {
             } else {
                 const updateCartItems = [...cartItems, product];
                 localStorage.setItem('cart-items', JSON.stringify(updateCartItems));
-                handleRemove(product_id);
-                setCartItems(updateCartItems);
+                handleMoveToCart(product_id);
                 toast.success(`${product.product_title} has added to the cart!`, {
                     position: "top-right",
                     autoClose: 5000,
@@ -57,6 +63,7 @@ const WishListedItem = ({product, setItems}) => {
                     progress: undefined,
                     theme: "light",
                 });
+                setCartItems(updateCartItems);
             }
         } else {
             const updateCartItems = [product];

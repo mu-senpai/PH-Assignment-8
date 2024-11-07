@@ -90,8 +90,8 @@ const Cart = () => {
 };
 
 Cart.propTypes = {
-    cartItems: PropTypes.array.isRequired,
-    setCartItems: PropTypes.func.isRequired,
+    cartItems: PropTypes.array,
+    setCartItems: PropTypes.func,
 }
 
 export default Cart;

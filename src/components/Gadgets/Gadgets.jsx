@@ -10,32 +10,32 @@ const Gadgets = () => {
     const allProducts = data?.products || [];
 
     useEffect(() => {
-        const fetchFallbackData = async () => {
-            try {
-                const storedProducts = JSON.parse(localStorage.getItem('all-products'));
+        // const fetchFallbackData = async () => {
+        //     try {
+        //         const storedProducts = JSON.parse(localStorage.getItem('all-products'));
                 
-                if (storedProducts) {
-                    const filteredProducts = categoryName
-                        ? storedProducts.filter(product => product.category === categoryName)
-                        : storedProducts;
-                    setProducts(filteredProducts);
-                } else {
-                    const response = await fetch('products.json');
-                    const fallbackData = await response.json();
-                    const fallbackProducts = fallbackData.products || [];
+        //         if (storedProducts) {
+        //             const filteredProducts = categoryName
+        //                 ? storedProducts.filter(product => product.category === categoryName)
+        //                 : storedProducts;
+        //             setProducts(filteredProducts);
+        //         } else {
+        //             const response = await fetch('products.json');
+        //             const fallbackData = await response.json();
+        //             const fallbackProducts = fallbackData.products || [];
                     
-                    const categoryFiltered = categoryName
-                        ? fallbackProducts.filter(product => product.category === categoryName)
-                        : fallbackProducts;
-                    setProducts(categoryFiltered);
+        //             const categoryFiltered = categoryName
+        //                 ? fallbackProducts.filter(product => product.category === categoryName)
+        //                 : fallbackProducts;
+        //             setProducts(categoryFiltered);
                     
-                    localStorage.setItem('all-products', JSON.stringify(fallbackProducts));
-                }
-            } catch (error) {
-                console.error("Error fetching fallback data:", error);
-                setProducts([]);
-            }
-        };
+        //             localStorage.setItem('all-products', JSON.stringify(fallbackProducts));
+        //         }
+        //     } catch (error) {
+        //         console.error("Error fetching fallback data:", error);
+        //         setProducts([]);
+        //     }
+        // };
 
         if (allProducts.length > 0) {
             const categoryFiltered = categoryName
@@ -43,11 +43,12 @@ const Gadgets = () => {
                 : allProducts;
             setProducts(categoryFiltered);
             
-            if (!localStorage.getItem('all-products')) {
-                localStorage.setItem('all-products', JSON.stringify(allProducts));
-            }
+            // if (!localStorage.getItem('all-products')) {
+            //     localStorage.setItem('all-products', JSON.stringify(allProducts));
+            // }
         } else {
-            fetchFallbackData();
+            // fetchFallbackData();
+            setProducts([]);
         }
     }, [allProducts, categoryName]);
 

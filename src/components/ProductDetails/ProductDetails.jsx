@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import { CiShoppingCart } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { useEffect, useState } from "react";
@@ -10,9 +10,12 @@ const ProductDetails = () => {
 
     const { productId } = useParams();
     const productIdInt = parseInt(productId);
-    const allProducts = JSON.parse(localStorage.getItem('all-products'));
+    const data = useLoaderData();
+    const allProducts = data.products;
+    console.log(allProducts);
+    // const allProducts = JSON.parse(localStorage.getItem('all-products'));
 
-    const selectedProduct = allProducts.find(product => product.product_id === productIdInt);
+    const selectedProduct = allProducts?.find(product => product.product_id === productIdInt);
 
     const { product_image, product_title, price, availability, description, specification, rating } = selectedProduct;
 
