@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const ProductDetails = () => {
 
@@ -21,10 +22,6 @@ const ProductDetails = () => {
 
     const [isAvailable, setIsAvailable] = useState(availability);
     const [notWishlisted, setNotWishlisted] = useState(true);
-
-    useEffect(() => {
-        document.title = `${product_title} | Gadget Heaven`
-    }, [product_title])
 
     useEffect(() => {
         if (availability) {
@@ -128,6 +125,9 @@ const ProductDetails = () => {
 
     return (
         <div className="w-full relative">
+            <Helmet>
+                <title>{product_title} | Gadget Heaven</title>
+            </Helmet>
 
             <div className="w-full h-[20rem] lg:h-[30rem] bg-[#9538E2] pt-5 sm:pt-7 lg:pt-8 mb-[42rem] sm:mb-[50rem] lg:mb-[30rem]">
                 <div className="w-[95%] sm:w-[85%] md:w-[75%] lg:w-[65%] xl:w-[50%] mx-auto space-y-3 lg:space-y-4">

@@ -2,18 +2,16 @@ import Navbar from "../Navbar/Navbar";
 import BannerImg from "../../assets/banner.jpg";
 import { Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import { useEffect } from "react";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const LayoutHome = () => {
-
-    useEffect(() => {
-        document.title = "Home | Gadget Heaven"
-    }, [])
-
     return (
         <div className="w-full pt-6">
+            <Helmet>
+                <title>Home | Gadget Heaven</title>
+            </Helmet>
             <div className="w-[96.25%] h-[30rem] sm:h-[35rem] lg:h-[43.375rem] mx-auto border border-[#09080F1A] rounded-[2rem] p-2 mb-[12rem] sm:mb-[20rem] lg:mb-[28rem] xl:mb-[30rem]">
                 <div className="w-full h-full rounded-3xl bg-[#9538E2] relative">
                     <Navbar></Navbar>

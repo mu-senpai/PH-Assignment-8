@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
 import WishListedItem from "../WishListedItem/WishListedItem";
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet-async";
 
 const Wishlist = () => {
 
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        document.title = "Wishlist | Gadget Heaven";
-        
         const storedWishlist = JSON.parse(localStorage.getItem("wish-list")) || [];
         setItems(storedWishlist);
     }, []);
 
     return (
         <div className="w-[90%] xl:w-[80%] mx-auto min-h-screen py-8 sm:py-10 lg:py-12 space-y-6">
+            <Helmet>
+                <title>Wishlist | Gadget Heaven</title>
+            </Helmet>
+
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl font-bold text-left">Wishlist</h3>
             {
                 items.length === 0 ? 

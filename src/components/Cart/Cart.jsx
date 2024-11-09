@@ -7,6 +7,7 @@ import modalImg from "../../assets/Group.png"
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const Cart = () => {
 
@@ -14,8 +15,6 @@ const Cart = () => {
     const [cartItems, setCartItems] = useContext(CartContext);
 
     useEffect(() => {
-        document.title = "Cart | Gadget Heaven";
-
         const storedCartItems = JSON.parse(localStorage.getItem("cart-items")) || [];
         setCartItems(storedCartItems);
     }, [setCartItems, cartItems]);
@@ -49,6 +48,9 @@ const Cart = () => {
 
     return (
         <div className="w-[90%] xl:w-[80%] mx-auto min-h-screen py-8 sm:py-10 lg:py-12 space-y-6">
+            <Helmet>
+                <title>Cart | Gadget Heaven</title>
+            </Helmet>
 
             <div className="w-full flex flex-col lg:flex-row items-center gap-6">
                 <div className="w-full lg:flex-grow flex items-center justify-between">
