@@ -3,7 +3,7 @@
 Your go-to destination for the latest and greatest gadgets! GadgetHeaven is an e-commerce platform designed for gadget enthusiasts, offering a seamless shopping experience with features like a shopping cart, wishlist, and product filtering. This React-based platform follows a detailed Figma design to ensure a visually appealing and user-friendly interface.
 
 ## 📌 Live Website Link
-[Visit GadgetHeaven✨](https://web-gadget-heaven.netlify.app/)
+[Visit GadgetHeaven✨](https://web-gadget-heaven-store.netlify.app/)
 
 ## 📑 Requirement Document Link
 [Project Requirements](https://turquoise-siana-62.tiiny.site/)
