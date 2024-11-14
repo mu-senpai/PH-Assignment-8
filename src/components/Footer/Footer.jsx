@@ -5,7 +5,7 @@ const Footer = () => {
 
                 <footer className="footer footer-center text-black py-10 sm:py-16 lg:py-24">
                     <aside className="w-[90%] mx-auto space-y-3">
-                        <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center">Gadget Heaven</h1>
+                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center">Gadget Heaven</h2>
                         <p className="text-xs/normal sm:text-sm/normal lg:text-base/normal font-medium text-center text-[#09080F99]">Leading the way in cutting-edge technology and innovation.</p>
                     </aside>
 
