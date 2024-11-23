@@ -22,7 +22,7 @@ const Gadgets = () => {
     }, [allProducts, categoryName]);
 
     if (products.length === 0) {
-        return <p>Loading products...</p>;
+        return <div className="w-full min-h-screen flex flex-col items-center justify-center"><span className="loading loading-spinner loading-lg"></span></div>;
     } else {
         return (
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">

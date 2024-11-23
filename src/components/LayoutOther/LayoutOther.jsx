@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 
 const LayoutOther = () => {
     return (
-        <div className="w-full">
+        <div className="w-full min-[1920px]:w-[120rem] min-h-screen mx-auto">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

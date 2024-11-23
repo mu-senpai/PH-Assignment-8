@@ -13,7 +13,7 @@ const Wishlist = () => {
     }, []);
 
     return (
-        <div className="w-[90%] xl:w-[80%] mx-auto min-h-screen py-8 sm:py-10 lg:py-12 space-y-6">
+        <div className="w-[90%] xl:w-[80%] mx-auto py-8 sm:py-10 lg:py-12 space-y-6">
             <Helmet>
                 <title>Wishlist | Gadget Heaven</title>
             </Helmet>
@@ -21,7 +21,7 @@ const Wishlist = () => {
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl font-bold text-left">Wishlist</h3>
             {
                 items.length === 0 ? 
-                <div className="w-full min-h-screen flex flex-col items-center justify-center">
+                <div className="w-full min-h-screen 2xl:min-h-[40rem] flex flex-col items-center justify-center">
                     <h1 className="text-3xl/normal sm:text-4xl/normal lg:text-5xl/normal font-bold text-center text-red-600">There is no item in the wishlist.</h1>
                 </div> :
                 items.map(item => <WishListedItem key={item.product_id} product={item} setItems={setItems}></WishListedItem>)

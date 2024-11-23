@@ -19,7 +19,7 @@ const Statistics = () => {
                     <p className="text-xs/normal sm:text-sm/normal lg:text-base/normal text-white text-center">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
                 </div>
             </div>
-            <div className="w-[90%] sm:w-[80%] lg:w-[70%] mx-auto min-h-screen flex flex-col items-center justify-center">
+            <div className="w-[90%] sm:w-[80%] lg:w-[70%] mx-auto min-h-screen 2xl:min-h-[40rem] flex flex-col items-center justify-center">
                 <h1 className="text-3xl/normal sm:text-4xl/normal lg:text-5xl/normal font-bold text-center text-red-600">No statistics are available at this moment.</h1>
             </div>
         </div>

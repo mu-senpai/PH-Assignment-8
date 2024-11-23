@@ -47,7 +47,7 @@ const Cart = () => {
     }
 
     return (
-        <div className="w-[90%] xl:w-[80%] mx-auto min-h-screen py-8 sm:py-10 lg:py-12 space-y-6">
+        <div className="w-[90%] xl:w-[80%] mx-auto py-8 sm:py-10 lg:py-12 space-y-6">
             <Helmet>
                 <title>Cart | Gadget Heaven</title>
             </Helmet>
@@ -67,7 +67,7 @@ const Cart = () => {
 
             {
                 cartItems.length === 0 ?
-                    <div className="w-full min-h-screen flex flex-col items-center justify-center">
+                    <div className="w-full min-h-screen 2xl:min-h-[40rem] flex flex-col items-center justify-center">
                         <h1 className="text-3xl/normal sm:text-4xl/normal lg:text-5xl/normal font-bold text-center text-red-600">Cart is empty.</h1>
                     </div> :
                     cartItems.map(item => <CartItem key={item.product_id} product={item}></CartItem>)

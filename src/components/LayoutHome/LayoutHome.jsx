@@ -16,7 +16,7 @@ const LayoutHome = () => {
     }
 
     return (
-        <div className="w-full pt-6">
+        <div className="w-full min-[1920px]:w-[120rem] mx-auto pt-6">
             <Helmet>
                 <title>Home | Gadget Heaven</title>
             </Helmet>
