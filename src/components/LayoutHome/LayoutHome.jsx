@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet-async";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 const LayoutHome = () => {
 
@@ -40,6 +41,7 @@ const LayoutHome = () => {
             </div>
             <Footer></Footer>
             <ToastContainer />
+            <ScrollToTop></ScrollToTop>
         </div>
     );
 };
