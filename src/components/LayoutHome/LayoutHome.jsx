@@ -41,7 +41,6 @@ const LayoutHome = () => {
             </div>
             <Footer></Footer>
             <ToastContainer />
-            <ScrollToTop></ScrollToTop>
         </div>
     );
 };
